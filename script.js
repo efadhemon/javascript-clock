@@ -37,7 +37,7 @@ function setRotation(element, rotationRatio) {
   element.style.setProperty("--rotation", rotationRatio * 360);
 }
 function setCount(element, time) {
-  element.innerHTML = time;
+  element.innerHTML = time < 10 ? "0" + time : time;
 }
 
 function setDay(element, day) {
