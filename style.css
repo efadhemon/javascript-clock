@@ -34,9 +34,9 @@ body {
   position: absolute;
 }
 .analog .wheel-area::after {
-  height: 30px;
-  width: 30px;
-  background-color: #00ffff;
+  height: 25px;
+  width: 25px;
+  background: #00ffff;
   border-radius: 50%;
   position: absolute;
   content: "";
@@ -58,17 +58,17 @@ body {
 .analog .wheel.second {
   width: 3px;
   height: 45%;
-  background-color: #ff0000;
+  background: #ff0000;
 }
 .analog .wheel.minute {
   width: 7px;
   height: 40%;
-  background-color: #9400d3;
+  background: #9400d3;
 }
 .analog .wheel.hour {
   width: 10px;
   height: 35%;
-  background-color: #da70d6;
+  background: #da70d6;
 }
 .analog .number-area {
   width: 100%;
@@ -175,14 +175,13 @@ body {
 }
 .digital .count-area {
   width: 100px;
-  height: 40px;
+  padding: 5px;
   position: absolute;
   bottom: 50px;
   left: 50%;
   transform: translate(-50%);
   border: 1px solid cyan;
   border-radius: 5px;
-  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -195,14 +194,14 @@ body {
   font-size: 12px;
 }
 
-.digital .day {
+.digital .date {
   position: absolute;
-  bottom: 95px;
+  bottom: 85px;
   left: 50%;
   transform: translate(-50%);
   color: #ffffff;
   z-index: 99;
-  font-size: 16px;
+  font-size: 12px;
 }
 /* digital clock css  end*/
 

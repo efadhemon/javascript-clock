@@ -1,5 +1,3 @@
-setInterval(setClock, 1000);
-
 const hourWheel = document.querySelector(".wheel.hour");
 const minuteWheel = document.querySelector(".wheel.minute");
 const secondWheel = document.querySelector(".wheel.second");
@@ -9,14 +7,13 @@ const minuteCount = document.querySelector(".count.minute");
 const secondCount = document.querySelector(".count.second");
 const statusCount = document.querySelector(".count.status");
 
-const dayArea = document.querySelector(".day");
+const date = document.querySelector(".date");
 
-function setClock() {
+const startClock = () => {
   const currentDate = new Date();
   const seconds = currentDate.getSeconds();
   const minutes = currentDate.getMinutes();
   const hours = currentDate.getHours();
-  const day = currentDate.getDay();
 
   const secondsRatio = seconds / 60;
   const minutesRatio = (secondsRatio + minutes) / 60;
@@ -25,32 +22,22 @@ function setClock() {
   setRotation(minuteWheel, minutesRatio);
   setRotation(hourWheel, hoursRatio);
 
-  setCount(hourCount, Math.abs(hours === 12 ? 0 : hours - 12));
+  setCount(hourCount, hours <= 12 ? (hours === 0 ? 12 : hours) : hours - 12);
   setCount(minuteCount, currentDate.getMinutes());
   setCount(secondCount, currentDate.getSeconds());
   setCount(statusCount, hours < 12 ? "am" : "pm");
 
-  setDay(dayArea, day);
-}
+  if (date.innerHTML !== currentDate.toDateString())
+    date.innerHTML = currentDate.toDateString();
+};
 
-function setRotation(element, rotationRatio) {
-  element.style.setProperty("--rotation", rotationRatio * 360);
-}
-function setCount(element, time) {
-  element.innerHTML = time < 10 ? "0" + time : time;
-}
+const setRotation = (element, ratio) => {
+  element.style.setProperty("--rotation", ratio * 360);
+};
+const setCount = (element, time) => {
+  time = time < 10 ? "0" + time : time;
+  if (element.innerHTML !== time.toString()) element.innerHTML = time;
+};
 
-function setDay(element, day) {
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  element.innerHTML = weekday[day];
-}
-
-setClock();
+startClock();
+setInterval(startClock, 1000);
