@@ -5,11 +5,10 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-width: 100%;
   min-height: 100vh;
   background: #151515;
+  overflow: hidden;
 }
 
 .clock {
@@ -18,6 +17,7 @@ body {
   width: 300px;
   border: 2px solid cyan;
   border-radius: 50%;
+  margin: 50px auto;
 }
 
 /* analog clock css end */
@@ -205,10 +205,11 @@ body {
 /* digital clock css  end*/
 
 .made-by {
+  width: 100%;
   position: absolute;
   bottom: 30px;
-  left: 50%;
-  transform: translate(-50%);
+  left: 0;
+  text-align: center;
   color: #ffffff;
 }
 .made-by a {
