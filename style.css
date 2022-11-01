@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.clock {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border: 2px solid salmon;
+  border-radius: 50%;
+}
+
+.wheel-area {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.wheel-area::after {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+.wheel {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border: 1px solid white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+.wheel.second {
+  width: 3px;
+  height: 45%;
+  background-color: red;
+}
+
+.wheel.minute {
+  width: 7px;
+  height: 40%;
+  background-color: black;
+}
+
+.wheel.hour {
+  width: 10px;
+  height: 35%;
+  background-color: black;
+}
+
+.number-area {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.number {
+  counter-increment: number;
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+}
+.number.number1 {
+  --rotation: 30deg;
+}
+.number.number2 {
+  --rotation: 60deg;
+}
+.number.number3 {
+  --rotation: 90deg;
+}
+.number.number4 {
+  --rotation: 120deg;
+}
+.number.number5 {
+  --rotation: 150deg;
+}
+.number.number6 {
+  --rotation: 180deg;
+}
+.number.number7 {
+  --rotation: 210deg;
+}
+.number.number8 {
+  --rotation: 240deg;
+}
+.number.number9 {
+  --rotation: 270deg;
+}
+.number.number10 {
+  --rotation: 300deg;
+}
+.number.number11 {
+  --rotation: 330deg;
+}
