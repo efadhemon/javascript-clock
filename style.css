@@ -34,7 +34,7 @@ body {
 .analog .wheel-area::after {
   height: 30px;
   width: 30px;
-  background-color: black;
+  background-color: #000000;
   border-radius: 50%;
   position: absolute;
   content: "";
@@ -56,17 +56,17 @@ body {
 .analog .wheel.second {
   width: 3px;
   height: 45%;
-  background-color: red;
+  background-color: #ff0000;
 }
 .analog .wheel.minute {
   width: 7px;
   height: 40%;
-  background-color: darkviolet;
+  background-color: #9400d3;
 }
 .analog .wheel.hour {
   width: 10px;
   height: 35%;
-  background-color: orchid;
+  background-color: #da70d6;
 }
 .analog .number-area {
   width: 100%;
@@ -82,40 +82,86 @@ body {
   text-align: center;
   transform: rotate(var(--rotation));
   font-size: 1.5rem;
-  color: white;
+  color: #ffffff;
 }
 .number.number1 {
-  --rotation: 30deg;
+  --rotation: calc(30 * 1deg);
 }
 .number.number2 {
-  --rotation: 60deg;
+  --rotation: calc(30 * 2deg);
 }
 .number.number3 {
-  --rotation: 90deg;
+  --rotation: calc(30 * 3deg);
 }
 .number.number4 {
-  --rotation: 120deg;
+  --rotation: calc(30 * 4deg);
 }
 .number.number5 {
-  --rotation: 150deg;
+  --rotation: calc(30 * 5deg);
 }
 .number.number6 {
-  --rotation: 180deg;
+  --rotation: calc(30 * 6deg);
 }
 .number.number7 {
-  --rotation: 210deg;
+  --rotation: calc(30 * 7deg);
 }
 .number.number8 {
-  --rotation: 240deg;
+  --rotation: calc(30 * 8deg);
 }
 .number.number9 {
-  --rotation: 270deg;
+  --rotation: calc(30 * 9deg);
 }
 .number.number10 {
-  --rotation: 300deg;
+  --rotation: calc(30 * 10deg);
 }
 .number.number11 {
-  --rotation: 330deg;
+  --rotation: calc(30 * 11deg);
+}
+.number.number12 {
+  --rotation: calc(30 * 12deg);
+}
+
+/* number rotation view problem fix */
+.number span {
+  display: block;
+  --rotation: 0;
+  transform: rotate(var(--rotation));
+}
+.number1 span {
+  --rotation: calc(-30 * 1deg);
+}
+.number2 span {
+  --rotation: calc(-30 * 2deg);
+}
+.number3 span {
+  --rotation: calc(-30 * 3deg);
+}
+.number4 span {
+  --rotation: calc(-30 * 4deg);
+}
+.number5 span {
+  --rotation: calc(-30 * 5deg);
+}
+.number6 span {
+  --rotation: calc(-30 * 6deg);
+}
+.number7 span {
+  --rotation: calc(-30 * 7deg);
+}
+.number8 span {
+  --rotation: calc(-30 * 8deg);
+}
+.number9 span {
+  --rotation: calc(-30 * 9deg);
+}
+.number10 span {
+  --rotation: calc(-30 * 10deg);
+}
+.number11 span {
+  --rotation: calc(-30 * 11deg);
+}
+.number12 span {
+  --rotation: calc(-30 * 12deg);
 }
 /* analog clock css end */
 
@@ -138,7 +184,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: white;
+  color: #ffffff;
   z-index: 99;
   font-size: 16px;
 }
@@ -152,8 +198,19 @@ body {
   bottom: 95px;
   left: 50%;
   transform: translate(-50%);
-  color: white;
+  color: #ffffff;
   z-index: 99;
   font-size: 16px;
 }
 /* digital clock css  end*/
+
+.made-by {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  color: #ffffff;
+}
+.made-by a {
+  color: #00ffff;
+}
