@@ -4,13 +4,15 @@
   box-sizing: border-box;
 }
 html {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 body {
   min-width: 100%;
   min-height: 100vh;
   background: #151515;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .clock {
@@ -19,7 +21,7 @@ body {
   width: 300px;
   border: 2px solid #00ffff;
   border-radius: 50%;
-  margin: 50px auto;
+  margin: 80px auto;
 }
 
 /* analog clock css end */
@@ -210,10 +212,49 @@ body {
   position: absolute;
   bottom: 30px;
   left: 0;
+  margin-top: auto;
   text-align: center;
   color: #ffffff;
 }
 .made-by a {
   color: #00ffff;
   text-decoration: none;
+}
+
+.github {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99;
+}
+.github:hover .git-arm {
+  animation: git-wave 560ms ease-in-out;
+}
+
+@keyframes git-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .made-by {
+    position: initial;
+  }
+  .github:hover .git-arm {
+    animation: none;
+  }
+  .github .git-arm {
+    animation: git-wave 560ms ease-in-out;
+    animation-delay: 5s;
+  }
 }
